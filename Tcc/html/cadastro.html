@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport;
+            background: url("img/fundo.jpeg.jpg")no-repeat center center fixed;
+            background-color: #ffffff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #6e756f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .buttonsForm {
+            text-align: center;
+        }
+
+        .btnColor {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btnColor button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+        .btnColor button:hover {
+            background: #555;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 30px;
+            box-sizing: border-box;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: #555;
+        }
+
+        #signin {
+            display: block;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/cf6fa41bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="buttonsForm">
+            <div class="btnColor">
+                <button id="btnSignin">Login</button>
+                <button id="btnSignup">Cadastrar</button>
+            </div>
+            <form id="signin" class="form">
+                <div class="form-group">
+                    <input type="email" id="email-login" name="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="senha-login" name="senha" placeholder="Senha" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <form id="signup" class="form">
+                <div class="form-group">
+                    <input type="text" id="nome-signup" name="nome" placeholder="Nome" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email-signup" name="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="senha-signup" name="senha" placeholder="Senha" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="feminino" name="genero" value="feminino" required>
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" id="masculino" name="genero" value="masculino" required>
+                    <label for="masculino">Masculino</label>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="data-nascimento" name="data_nascimento" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnSignin = document.getElementById('btnSignin');
+            const btnSignup = document.getElementById('btnSignup');
+            const signinForm = document.getElementById('signin');
+            const signupForm = document.getElementById('signup');
+
+            btnSignin.addEventListener('click', () => {
+                signinForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            });
+
+            btnSignup.addEventListener('click', () => {
+                signinForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
